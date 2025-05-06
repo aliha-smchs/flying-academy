@@ -59,7 +59,7 @@ const Courses = () => {
   ];
 
   return (
-    <section id="features" aria-label="Features" className="relative overflow-hidden bg-blue-600 pb-28 sm:py-32">
+    <section id="courses" aria-label="Features" className="relative overflow-hidden bg-blue-600 pb-28 sm:py-32">
       <img
         alt=""
         loading="lazy"
@@ -82,11 +82,11 @@ const Courses = () => {
 
         <div className="mt-16 grid grid-cols-1 items-start gap-y-2 pt-10 sm:gap-y-6 md:mt-20 lg:grid-cols-12 lg:pt-0">
           <div className="-mx-4 flex overflow-x-auto pb-4 sm:mx-0 sm:overflow-visible sm:pb-0 lg:col-span-5">
-            <div className="relative z-10 flex gap-x-4 px-4 sm:mx-auto sm:px-0 lg:mx-0 lg:block lg:gap-x-0 lg:gap-y-1 lg:whitespace-normal" role="tablist" aria-orientation="vertical">
+            <div className="relative z-10 flex gap-x-4 px-4 sm:mx-auto sm:px-0 lg:mx-0 lg:block lg:gap-x-0 lg:gap-y-1 lg:whitespace-normal" role="tablist" aria-orientation="horizontal" style={{ minWidth: "100%", scrollbarWidth: "none" }}>
               {features.map((feature, featureIndex) => (
                 <div
                   key={feature.name}
-                  className={`group relative rounded-full px-4 py-1 lg:rounded-l-xl lg:rounded-r-none lg:p-6 ${
+                  className={`group relative rounded-full px-4 py-1 lg:rounded-l-xl lg:rounded-r-none lg:p-6 flex-shrink-0 ${
                     featureIndex === selectedTab
                       ? "bg-white lg:bg-white/10 lg:ring-1 lg:ring-white/10 lg:ring-inset"
                       : "hover:bg-white/10 lg:hover:bg-white/5"
@@ -94,7 +94,7 @@ const Courses = () => {
                 >
                   <h3>
                     <button
-                      className={`font-display text-lg [&[data-state=selected]]:text-blue-600 lg:[&[data-state=selected]]:text-white ${
+                      className={`font-display text-lg whitespace-nowrap sm:whitespace-normal [&[data-state=selected]]:text-blue-600 lg:[&[data-state=selected]]:text-white ${
                         featureIndex === selectedTab
                           ? "text-blue-600 lg:text-white"
                           : "text-blue-100 hover:text-white lg:text-white"
@@ -141,9 +141,9 @@ const Courses = () => {
                 </div>
 
                 <div className="mt-10 w-full overflow-hidden rounded-xl bg-slate-50 shadow-xl shadow-blue-900/20 sm:w-auto lg:mt-0">
-                  <div className="p-8">
+                  <div className="p-4 sm:p-8">
                     {feature.content.map((item, index) => (
-                      <div key={index} className="flex gap-6 mb-8 last:mb-0">
+                      <div key={index} className="flex flex-col sm:flex-row gap-3 sm:gap-6 mb-8 last:mb-0">
                         <div className="flex-shrink-0 flex items-center justify-center w-12 h-12 rounded-lg bg-blue-100 text-blue-600">
                           {feature.icon}
                         </div>
