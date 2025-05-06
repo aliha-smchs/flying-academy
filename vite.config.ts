@@ -5,7 +5,7 @@ import { componentTagger } from "lovable-tagger";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
-  base: mode === 'production' ? '/melbourne-flight-academy-fly/' : '/', // Base path for GitHub Pages
+  base: mode === 'production' ? '/flying-academy/' : '/', // Base path for GitHub Pages
   server: {
     host: "::",
     port: 8080,
